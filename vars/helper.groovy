@@ -35,3 +35,9 @@ List<Map> getStageResults( RunWrapper build ) {
 List<Map> getFailedStages( RunWrapper build ) {
     return getStageResults( build ).findAll{ it.result == 'FAILURE' }
 }
+
+// Get information of all Unstable stages
+@NonCPS
+List<Map> getUnstableStages( RunWrapper build ) {
+    return getStageResults( build ).findAll{ it.result == 'UNSTABLE' }
+}
