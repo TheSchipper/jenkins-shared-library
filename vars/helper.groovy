@@ -41,3 +41,8 @@ List<Map> getFailedStages( RunWrapper build ) {
 List<Map> getUnstableStages( RunWrapper build ) {
     return getStageResults( build ).findAll{ it.result == 'UNSTABLE' }
 }
+
+
+def getLogText(RunWrapper build) {
+    return build.rawBuild.getLogText()
+}
